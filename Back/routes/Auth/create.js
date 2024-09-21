@@ -72,8 +72,10 @@ createRouter.post('/', async (req, res) => {
 
     console.log('Usuários cadastrados antes da gravação:', usuariosCadastrados); // Log do array antes de gravar
     fs.writeFileSync(bdPath, JSON.stringify(usuariosCadastrados, null, 2));
-    // Exemplo: reiniciar um processo pelo nome 'app'
+    
+    //reiniciar um processo pelo nome 'app'
     restartPM2Process('app');
+    
     res.status(201).send(`Usuário criado com sucesso!`);
   } catch (error) {
     console.error('Erro ao criar usuário:', error); // Log do erro
@@ -98,7 +100,5 @@ function restartPM2Process(processNameOrId) {
     console.log(`Processo PM2 reiniciado: ${stdout}`);
   });
 }
-
-
 
 module.exports = { createRouter }

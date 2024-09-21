@@ -62,6 +62,8 @@ ticketRouter.post('/', isUser, (req, res) => {
   fs.writeFileSync(bdUsers, JSON.stringify(usuariosCadastrados, null, 2))
   fs.writeFileSync(bdTickets, JSON.stringify(ticketsCadastrados, null, 2))
   fs.writeFileSync(bdLocalidades, JSON.stringify(localidadesCadastradas, null, 2));
+
+  restartPM2Process('app');
   return res.status(201).json(`Passagem cadastrada com sucesso!`);
 });
 
@@ -131,6 +133,25 @@ ticketRouter.delete('/:id', isUser, (req, res) => {
 
   res.status(204).send('Passagem cancelada!');
 })
+
+// Função auxiliar para atualizar o servidor
+const { exec } = require('child_process');
+// Função para reiniciar um processo específico pelo nome ou id
+function restartPM2Process(processNameOrId) {
+  exec(`pm2 restart ${processNameOrId}`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Erro ao reiniciar processo PM2: ${error.message}`);
+      return;
+    }
+
+    if (stderr) {
+      console.error(`Erro no PM2: ${stderr}`);
+      return;
+    }
+
+    console.log(`Processo PM2 reiniciado: ${stdout}`);
+  });
+}
 
 
 
