@@ -49,7 +49,7 @@ loginRouter.post('/', async (req, res) => {
     
     if (!user) {
         console.log(`Email fornecido: ${email} não encontrado!`);  // Log para depuração
-        return res.status(409).send(`Usuário com email ${email} não existe! sommmmm${user}`);
+        return res.status(419).send(`Usuário com email ${email} não existe! ${user}`);
     }
 
     // Comparação de senhas
