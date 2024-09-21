@@ -10,7 +10,7 @@ export default function NavCustom() {
     const fetchUserData = async () => {
       try {
         const token = sessionStorage.getItem('token');
-        const response = await axios.get('http://localhost:3000/api/usuario', {
+        const response = await axios.get('http://54.207.24.168:3000/api/usuario', {
           headers: {
             Authorization: `Bearer ${token}`
           }

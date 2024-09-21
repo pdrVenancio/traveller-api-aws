@@ -12,7 +12,7 @@ const RemoverLocal = () => {
     // Fetch existing localidades from the backend
     const fetchLocalidades = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/localidades');
+        const response = await axios.get('http://54.207.24.168:3000/api/localidades');
         setLocalidades(response.data);
       } catch (error) {
         console.error('Error fetching localidades:', error);
@@ -32,7 +32,7 @@ const RemoverLocal = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:3000/api/localidades/${selectedLocalidade}`,  {
+      await axios.delete(`http://54.207.24.168:3000/api/localidades/${selectedLocalidade}`,  {
         headers: {
           Authorization: `Bearer ${token}` // Envia o token no cabeçalho da requisição
         }

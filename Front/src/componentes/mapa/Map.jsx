@@ -45,7 +45,7 @@ const Map = ({ apikey }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/localidades');
+        const response = await axios.get('http://54.207.24.168:3000/api/localidades');
         const locais = response.data;
 
         locais.forEach(local => {
@@ -86,7 +86,7 @@ const Map = ({ apikey }) => {
       const token = sessionStorage.getItem('token');
       console.log(token);
 
-      const response = await axios.post('http://localhost:3000/api/passagens', {
+      const response = await axios.post('http://54.207.24.168:3000/api/passagens', {
         location: selectedLocation.nome,
         price: selectedLocation.precoPassagem,
       }, {

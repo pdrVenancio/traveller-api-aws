@@ -33,7 +33,7 @@ const Map = ({ apikey }) => {
     // Fetch data from your API and add markers
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/localidades');
+        const response = await axios.get('http://54.207.24.168:3000/api/localidades');
         const locais = response.data;
         console.log(locais);
 

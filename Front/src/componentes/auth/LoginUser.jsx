@@ -30,7 +30,7 @@ export default function LoginUser() {
 
   const submit = async (data) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/login', data);
+      const response = await axios.post('http://54.207.24.168:3000/api/login', data);
       sessionStorage.setItem('token', response.data); // Salva o token no sessionStorage
       setMsg('Usuário Autenticado');
       toast.success('Usuário Autenticado', {

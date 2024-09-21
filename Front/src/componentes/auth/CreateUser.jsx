@@ -32,7 +32,7 @@ export default function CreateUser() {
 
   const submit = async (data) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/cadastro', data);
+      const response = await axios.post('http://54.207.24.168:3000/api/cadastro', data);
       if (response.status === 201) {
         setMsg('Usuario criado com sucesso!');
         toast.success('Usuário criado com sucesso!', {

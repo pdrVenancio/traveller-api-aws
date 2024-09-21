@@ -18,7 +18,7 @@ const AtualizarLocal = () => {
   useEffect(() => {
     const fetchLocalidades = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/localidades');
+        const response = await axios.get('http://54.207.24.168:3000/api/localidades');
         setLocalidades(response.data);
       } catch (error) {
         console.error('Error fetching localidades:', error);
@@ -62,7 +62,7 @@ const AtualizarLocal = () => {
         precoPassagem: formData.precoPassagem,
       };
 
-      const response = await axios.put(`http://localhost:3000/api/localidades`, data, {
+      const response = await axios.put(`http://54.207.24.168:3000/api/localidades`, data, {
         headers: {
           Authorization: `Bearer ${token}` // Envia o token no cabeçalho da requisição
         }

@@ -41,7 +41,7 @@ const InserirNovoLocal = () => {
       };
 
       // Envio dos dados para o backend usando Axios
-      const response = await axios.post('http://localhost:3000/api/localidades', data, {
+      const response = await axios.post('http://54.207.24.168:3000/api/localidades', data, {
         headers: {
           Authorization: `Bearer ${token}` // Envia o token no cabeçalho da requisição
         }

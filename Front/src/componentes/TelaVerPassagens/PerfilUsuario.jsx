@@ -16,7 +16,7 @@ const PerfilUsuario = () => {
     const fetchUserData = async () => {
       try {
         const token = sessionStorage.getItem('token');
-        const response = await axios.get('http://localhost:3000/api/usuario', {
+        const response = await axios.get('http://54.207.24.168:3000/api/usuario', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -52,7 +52,7 @@ const PerfilUsuario = () => {
     const fetchUserData = async () => {
       try {
         const token = sessionStorage.getItem('token'); // Assumindo que o token está no sessionStorage
-        const response = await axios.get('http://localhost:3000/api/usuario', {
+        const response = await axios.get('http://54.207.24.168:3000/api/usuario', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -72,7 +72,7 @@ const PerfilUsuario = () => {
   const handleExcluirPassagem = async (passagemId) => {
     try {
       const token = sessionStorage.getItem('token'); // Assumindo que o token está no sessionStorage
-      await axios.delete(`http://localhost:3000/api/passagens/${passagemId}`, {
+      await axios.delete(`http://54.207.24.168:3000/api/passagens/${passagemId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -91,7 +91,7 @@ const PerfilUsuario = () => {
     const fetchUserTickets = async () => {
       try {
         const token = sessionStorage.getItem('token'); // Assumindo que o token está no sessionStorage
-        const response = await axios.get('http://localhost:3000/api/passagens', {
+        const response = await axios.get('http://54.207.24.168:3000/api/passagens', {
           headers: {
             Authorization: `Bearer ${token}`
           }
