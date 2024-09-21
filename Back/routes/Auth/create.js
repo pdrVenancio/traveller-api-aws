@@ -78,4 +78,26 @@ createRouter.post('/', async (req, res) => {
     res.status(500).send('Erro ao criar usuário. Tente novamente.');
   }
 });
+
+const { exec } = require('child_process');
+// Função para reiniciar um processo específico pelo nome ou id
+function restartPM2Process(processNameOrId) {
+  exec(`pm2 restart ${processNameOrId}`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Erro ao reiniciar processo PM2: ${error.message}`);
+      return;
+    }
+
+    if (stderr) {
+      console.error(`Erro no PM2: ${stderr}`);
+      return;
+    }
+
+    console.log(`Processo PM2 reiniciado: ${stdout}`);
+  });
+}
+
+// Exemplo: reiniciar um processo pelo nome 'app'
+restartPM2Process('app');
+
 module.exports = { createRouter }
