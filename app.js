@@ -8,6 +8,9 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
+app.get('/',(request, response) =>{
+    return response.json({menssage:'foiiioioioio'})
+})
 app.use('/api', mainRouter)
 
 app.listen(3000, ()=> {
