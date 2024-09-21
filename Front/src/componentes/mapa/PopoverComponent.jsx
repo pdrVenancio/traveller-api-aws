@@ -15,7 +15,7 @@ const PopoverComponent = ({ local, onClose }) => {
         </div>
         <p>{local.descricao}</p>
         <p>Valor da passagem: R$ {local.valorPassagem ? local.valorPassagem.toFixed(2) : 'Valor não disponível'}</p>
-        <Button variant="light">Comprar Passagem</Button>
+        <Button variant="light" onClick={() => window.location.reload()}>Comprar Passagem</Button>
         <Button variant="light" onClick={onClose}>Fechar</Button>
       </Popover.Body>
     </Popover>
