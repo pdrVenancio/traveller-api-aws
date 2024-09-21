@@ -45,7 +45,7 @@ loginRouter.post('/', async (req, res) => {
     const { email, password } = req.body;
 
     // Verificação de email
-    const user = usuariosCadastrados.find(user => user.email === email);
+    const user = usuariosCadastrados.find(user => user.email == email);
     
     if (!user) {
         console.log(`Email fornecido: ${email} não encontrado!`);  // Log para depuração
